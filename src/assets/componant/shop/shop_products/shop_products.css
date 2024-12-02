@@ -1,0 +1,70 @@
+.product-list .product-item {
+  position: relative;
+}
+
+.product-list .hover-after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.product-list .hover-after .icons {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+}
+
+.product-list .hover-after .icons .icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.9rem;
+}
+.product-list .hover-after .icons .icon span {
+  font-size: 0.8rem;
+}
+
+.product-list .product-item:hover .hover-after {
+  opacity: 1;
+  background-color: hsla(0, 0%, 23%, 0.375);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: var(--second_background_color);
+  font-size: 1.25rem;
+  font-weight: 400;
+  border-radius: 5px;
+
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: var( --primary_color);
+    color: #fff;
+  }
+  
+  .pagination button:hover {
+    box-shadow: 0 0 10px var(--primary_color);
+  }

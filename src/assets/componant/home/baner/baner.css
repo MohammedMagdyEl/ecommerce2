@@ -1,0 +1,110 @@
+.baner {
+  position: relative;
+}
+
+.background img {
+  width: 100%;
+}
+
+.baner_text {
+  position: absolute;
+  width: 40%;
+  left: 50%;
+  top: 25%;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  background-color: var(--second_background_color);
+}
+.baner_text h5 {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
+
+.baner_text h3 {
+  font-size: 2.5rem;
+  color: var(--primary_color);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.baner_text p {
+  font-size: 01.1rem;
+  height: 20%;
+  overflow: hidden;
+}
+.baner_text .btn {
+  background-color: var(--primary_color);
+  color: #fff;
+  padding: 15px 25px;
+  width: 150px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  font-weight: 400;
+  transition: 0.5s;
+}
+
+.baner_text .btn:hover {
+  box-shadow: 0 0 20px var(--primary_color);
+}
+
+@media (max-width: 850px) {
+  .baner_text h5 {
+    font-size: 1rem;
+  }
+  .baner_text h3 {
+    font-size: 1.5rem;
+  }
+  .baner_text p {
+    font-size: 0.7rem;
+
+  }
+  .baner_text .btn {
+
+    padding: 10px;
+    font-size: .8rem;
+
+  }
+}
+
+@media (max-width: 700px){
+  .baner_text h5 {
+    font-size: .8rem;
+  }
+  .baner_text h3 {
+    font-size: 1.1rem;
+  }
+  .baner_text p {
+    font-size: 0.6rem;
+
+  }
+  .baner_text .btn {
+    width: 100px;
+    padding: 7px;
+    font-size: .8rem;
+
+  }
+}
+
+@media (max-width: 550px){
+  .baner_text h5 {
+    font-size: .6rem;
+  }
+  .baner_text h3 {
+    font-size: .8rem;
+  }
+  .baner_text p {
+    font-size: 0.5rem;
+
+  }
+  .baner_text .btn {
+    width: 70px;
+    padding: 5px;
+    font-size: .5rem;
+
+  }
+}

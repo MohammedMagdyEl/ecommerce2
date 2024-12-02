@@ -1,0 +1,74 @@
+.Beautiful_roomes {
+  margin: 50px 0;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--second_background_color);
+}
+.Beautiful_roomes .lift {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.Beautiful_roomes .lift h2 {
+  font-size: 1.25rem;
+  word-spacing: 2px;
+}
+.Beautiful_roomes .lift p {
+  font-size: 0.8rem;
+  color: #9f9f9f;
+}
+.Beautiful_roomes .lift button {
+  margin-top: 10px;
+  background-color: var(--primary_color);
+  color: #fff;
+  padding: 15px 25px;
+  width: 200px;
+  border: 1px solid var(--primary_color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 5px;
+}
+.navigation {
+  width: 65%;
+}
+
+.mySwiper img {
+  width: 100%;
+}
+
+@media (max-width: 750px) {
+  .Beautiful_roomes {
+    margin: 20px 0;
+    padding: 20px 0;
+   flex-direction: column;
+   gap: 25px;
+  }
+  .Beautiful_roomes .lift {
+    width: 90%;
+    gap: 10px;
+  }
+  .navigation {
+    width: 90%;
+  }
+  .Beautiful_roomes .lift h2 {
+    font-size: 1.5rem;
+   
+  }
+  .Beautiful_roomes .lift p {
+    font-size: 1rem;
+    
+  }
+  .Beautiful_roomes .lift button {
+    margin-top: 5px;
+    /* background-color: var(--primary_color); */
+    /* color: #fff; */
+    padding: 10px 0px;
+    width: 150px;
+    
+    font-size: 1rem;
+  
+  }
+}
