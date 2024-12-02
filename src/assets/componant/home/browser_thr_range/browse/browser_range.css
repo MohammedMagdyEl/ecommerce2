@@ -1,4 +1,8 @@
 
+
+.browser_range{
+  padding: 0 50px;
+}
 .browser_range .text_browser {
   display: flex;
   flex-direction: column;

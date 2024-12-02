@@ -12,7 +12,6 @@ import { Link } from "react-router";
 function Header() {
   const [showModel, setshowModel] = useState(false);
 
-
   return (
     <div className="header ">
       <div className="logo ">
@@ -69,48 +68,81 @@ function Header() {
         <CiMenuBurger />
       </button>
       {showModel && (
-        <div className="fixed">
-          <ul className=" nav">
-            <li>
-              <button
-                className=" icon-close btn-close "
+        <div className="fixed border">
+          <div>
+            <ul className=" nav ">
+              <li>
+                <button
+                  className=" icon-close btn-close "
+                  onClick={() => {
+                    setshowModel(false);
+                  }}
+                >
+                  <IoClose />
+                </button>
+              </li>
+              <li
                 onClick={() => {
                   setshowModel(false);
                 }}
               >
-                <IoClose />
-              </button>
-            </li>
-            <li
-              onClick={() => {
-                setshowModel(false);
-              }}
-            >
-              <Link to="/">Home</Link>
-            </li>
-            <li
-              onClick={() => {
-                setshowModel(false);
-              }}
-            >
-              <Link to="/shop">Shop</Link>
-            </li>
-            <li
-              onClick={() => {
-                setshowModel(false);
-              }}
-            >
-              <Link to="/about">About</Link>
-            </li>
-            <li
-              onClick={() => {
-                setshowModel(false);
-              }}
-            >
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-
+                <Link to="/">Home</Link>
+              </li>
+              <li
+                onClick={() => {
+                  setshowModel(false);
+                }}
+              >
+                <Link to="/shop">Shop</Link>
+              </li>
+              <li
+                onClick={() => {
+                  setshowModel(false);
+                }}
+              >
+                <Link to="/about">About</Link>
+              </li>
+              <li
+                onClick={() => {
+                  setshowModel(false);
+                }}
+              >
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="icons-fixed ">
+            <ul>
+              <li onClick={() => {
+                  setshowModel(false);
+                }}>
+                <Link to="/login">
+                  <IoPersonAddOutline />
+                </Link>
+              </li>
+              <li onClick={() => {
+                  setshowModel(false);
+                }}>
+                <Link to="/search">
+                  <CiSearch />
+                </Link>
+              </li>
+              <li onClick={() => {
+                  setshowModel(false);
+                }}>
+                <Link to="/favorite">
+                  <CiHeart />
+                </Link>
+              </li>
+              <li onClick={() => {
+                  setshowModel(false);
+                }}>
+                <Link to="/cart">
+                  <CiShoppingCart />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
     </div>

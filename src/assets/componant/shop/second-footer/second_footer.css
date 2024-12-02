@@ -1,0 +1,44 @@
+.second-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--second_background_color);
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+}
+
+.second-footer .high_quality {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  cursor: pointer;
+  width: 25%;
+
+}
+.second-footer .high_quality .icon {
+  width: 20%;
+}
+
+.second-footer .high_quality .icon img {
+  width: 100%;
+}
+
+.second-footer .high_quality .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.second-footer .high_quality  .text h3{
+    font-size: 1rem;
+
+}
+
+.second-footer .high_quality .text p{
+    font-size: .8rem;
+    
+}

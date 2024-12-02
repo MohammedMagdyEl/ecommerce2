@@ -28,7 +28,7 @@ function Shop_products() {
     }
   };
   return (
-    <>
+    <div className="Our-Products">
       <div className="product-list">
         {currentItems.map((product) => (
           <div key={product.id} className="product-item">
@@ -80,7 +80,7 @@ function Shop_products() {
           Next
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

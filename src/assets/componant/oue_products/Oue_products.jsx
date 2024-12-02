@@ -513,7 +513,7 @@ const ProductList = () => {
   };
 
   return (
-    <>
+    <div className="Our-Products">
       <h1 className="title">Our Products</h1>
       <div className="product-list">
         {items.map((product) => (
@@ -541,7 +541,7 @@ const ProductList = () => {
         </div>
       )}
       </div>
-    </>
+    </div>
   );
 };
 
