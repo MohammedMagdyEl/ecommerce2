@@ -86,7 +86,7 @@
   }
   .product-list .product-item {
     width: 30%;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+
     transition: 0.5s;
   }
 }

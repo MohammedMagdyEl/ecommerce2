@@ -1,0 +1,150 @@
+.billing_det {
+  padding-block: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  gap: 50px;
+}
+
+.billing_det .lift {
+  width: 30%;
+}
+.billing_det .lift form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.billing_det .lift form .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.billing_det .lift form .name div {
+  width: 50%;
+}
+.billing_det .lift form .name div input {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.billing_det .lift form label {
+  font-size: 0.9rem;
+  padding: 5px 0;
+}
+
+.billing_det .lift form input {
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #9f9f9f;
+  margin: 0 0 20px 0;
+}
+
+.billing_det .lift form input:focus {
+  border: 2px solid var(--primary_color);
+  background-color: var(--second_background_color);
+  outline: none;
+}
+.billing_det .right{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.billing_det .top {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: auto auto;
+  gap: 15px;
+}
+
+.billing_det .top span{
+    color: #9f9f9f;
+}
+.billing_det .top h4{
+    color: var(--primary_color);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.billing_det .top .none{
+    display: contents;
+}
+
+.billing_det .top .total{
+    margin-left: -40px;
+}
+
+.billing_det .top h2{
+    font-weight: 800;
+
+}
+
+.billing_det .buttom{
+   
+}
+.billing_det .buttom form{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:10px ;
+
+}
+.billing_det .buttom form input{
+/*  */
+}
+.billing_det .buttom form label{
+font-size: 1.25rem;
+font-weight: 600;
+padding: 5px;
+
+}
+
+.billing_det .buttom form p{
+    /* margin-top: 10px; */
+    padding-top: 10px;
+    margin-left: 15px;
+    color: #9f9f9f;
+}
+.billing_det .buttom form p a{
+    color: var(--primary_color);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.billing_det .buttom form button{
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #fff;
+    color: var(--primary_color);
+    padding: 15px 25px;
+    width: 50%;
+    border: 1px solid var(--primary_color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: 0.7s ease;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  
+.billing_det .buttom form button:hover {
+    color: #fff;
+    background-color: var(--primary_color);
+    box-shadow: 0 0 20px var(--primary_color);
+  }
+
+  @media(max-width:500px){
+    .billing_det{
+        display: block;
+        padding: 0 50px;
+    }
+    .billing_det .lift,
+    .billing_det .right{
+        width: 100%;
+    }
+  }

@@ -38,11 +38,14 @@ const CartProvider = ({ children }) => {
 
   const removeFromCart = (itemId) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+
+    
   };
 
   const addToWishlist = (item) => {
     setWishlistItems((prevItems) => {
       if (prevItems.some((wishlistItem) => wishlistItem.id === item.id)) {
+        
         return prevItems;
       }
       return [...prevItems, item];

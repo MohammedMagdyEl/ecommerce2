@@ -4,6 +4,7 @@ import cart_baner from "../../image/cart/1.png";
 import { MdDelete } from "react-icons/md";
 import { CartContext } from "../../context/context";
 import Second_Footer from "../second-footer/Second_Footer";
+import { Link } from "react-router";
 
 function Cart() {
   const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
@@ -16,8 +17,8 @@ function Cart() {
   );
 
   const handleQuantityChange = (e, item) => {
-    const updatedQuantity = parseInt(e.target.value) || 1; 
-    updateQuantity(item.id, updatedQuantity); 
+    const updatedQuantity = parseInt(e.target.value) || 1;
+    updateQuantity(item.id, updatedQuantity);
   };
 
   return (
@@ -53,7 +54,7 @@ function Cart() {
                     type="number"
                     value={item.quantity || 1}
                     min="1"
-                    onChange={(e) => handleQuantityChange(e, item)} 
+                    onChange={(e) => handleQuantityChange(e, item)}
                   />
                 </div>
                 <div className="subtotal">
@@ -81,10 +82,12 @@ function Cart() {
               Total: <span>Rs. {total.toLocaleString()}</span>
             </h6>
           </div>
-          <button>Check Out</button>
+          <Link to="/check_out">
+            <button>Check Out</button>
+          </Link>
         </div>
       </div>
-      <Second_Footer/>
+      <Second_Footer />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 .product-list .product-item {
-  position: relative;
 }
 
 .product-list .hover-after {
@@ -16,20 +15,50 @@
   justify-content: center;
   gap: 15px;
 }
+.product-list .product-item img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+
+}
+
+.product-list .hover-after .button {
+  width: 100%;
+}
+.product-list .hover-after .button .add_btn {
+  margin-top: 20px;
+  background-color: #fff;
+  color: var(--primary_color);
+  padding: 7px;
+  width: 75%;
+  border: 1px solid var(--primary_color);
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: 0.7s ease;
+  border-radius: 5px;
+}
+
+.product-list .hover-after .button .add_btn:hover {
+  color: #fff;
+  background-color: var(--primary_color);
+  box-shadow: 0 0 20px var(--primary_color);
+}
 
 .product-list .hover-after .icons {
   display: flex;
   justify-content: space-around;
-
   width: 100%;
 }
 
 .product-list .hover-after .icons .icon {
+  cursor: pointer;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 3px;
   font-size: 0.9rem;
+}
+.product-list .hover-after .icons .btn_favorite {
+  border: none;
+  background-color: transparent;
 }
 .product-list .hover-after .icons .icon span {
   font-size: 0.8rem;
@@ -61,10 +90,40 @@
 }
 
 .pagination button.active {
-    background-color: var( --primary_color);
-    color: #fff;
+  background-color: var(--primary_color);
+  color: #fff;
+}
+
+.pagination button:hover {
+  box-shadow: 0 0 10px var(--primary_color);
+}
+
+@media (max-width: 900px) {
+  .product-list .hover-after {
+
+ 
+
+    gap: 20px;
   }
-  
-  .pagination button:hover {
-    box-shadow: 0 0 10px var(--primary_color);
+  .product-list .hover-after .button .add_btn {
+    margin-top: -50px;
+    background-color: #fff;
+    color: var(--primary_color);
+    padding: 3px;
+    width: 75%;
+    border: 1px solid var(--primary_color);
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: 0.7s ease;
+    border-radius: 5px;
   }
+  .product-list .hover-after .icons .icon {
+    font-size: 0.7rem;
+  }
+  .product-list .hover-after .icons {
+    margin-top: -25px;
+  }
+  .product-list .hover-after .icons .icon span {
+    display: none;
+  }
+}

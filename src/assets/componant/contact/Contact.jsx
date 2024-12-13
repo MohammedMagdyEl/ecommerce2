@@ -13,7 +13,7 @@ function Contact() {
           <img src={baner} alt="" />
         </div>
         <div className="touch ">
-          <div className="lift ">
+          <div className="lift">
             <div className="address ">
               <div className="icon">
                 <img src={address} alt="" />

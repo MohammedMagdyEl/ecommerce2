@@ -1,6 +1,7 @@
 import React from "react";
 import "./baner.css";
 import background from "../../../image/background 1.png";
+import { Link } from "react-router";
 
 function Baner() {
   return (
@@ -19,9 +20,9 @@ function Baner() {
           consequatur aut sequi voluptas quos, eveniet quas reiciendis quidem?
           Incidunt, libero!
         </p>
-
+        <Link to="/Shop">
           <button className="btn">Buy Now</button>
-        
+        </Link>
       </div>
     </div>
   );
