@@ -38,6 +38,7 @@
 .billing_det .lift form input {
   height: 50px;
   border-radius: 5px;
+  padding:0 10px;
   border: 1px solid #9f9f9f;
   margin: 0 0 20px 0;
 }
@@ -94,9 +95,7 @@
     gap:10px ;
 
 }
-.billing_det .buttom form input{
-/*  */
-}
+
 .billing_det .buttom form label{
 font-size: 1.25rem;
 font-weight: 600;
@@ -105,7 +104,6 @@ padding: 5px;
 }
 
 .billing_det .buttom form p{
-    /* margin-top: 10px; */
     padding-top: 10px;
     margin-left: 15px;
     color: #9f9f9f;

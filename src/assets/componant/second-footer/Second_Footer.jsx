@@ -8,7 +8,7 @@ import support from "../../image/second_footer/4.png"
 function Second_Footer() {
   return (
     <div className='second-footer'>
-        <div className="high_quality ">
+        <div className="item ">
             <div className="icon ">
                 <img src={high} alt="" />
             </div>
@@ -17,7 +17,7 @@ function Second_Footer() {
                 <p>crafted from top materials</p>
             </div>
         </div>
-        <div className="high_quality">
+        <div className="item">
         <div className="icon">
                 <img src={warranty} alt="" />
             </div>
@@ -26,7 +26,7 @@ function Second_Footer() {
                 <p>Over 2 years</p>
             </div>
         </div>
-        <div className="high_quality">
+        <div className="item">
         <div className="icon">
                 <img src={free} alt="" />
             </div>
@@ -35,7 +35,7 @@ function Second_Footer() {
                 <p>Order over 150 $</p>
             </div>
         </div>
-        <div className="high_quality ">
+        <div className="item ">
         <div className="icon">
                 <img src={support} alt="" />
             </div>

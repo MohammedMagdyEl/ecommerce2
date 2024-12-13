@@ -65,7 +65,15 @@
 .contact .touch form input {
   width: 80%;
 }
+.contact .touch form input{
+  padding:0 10px;
+}
 
+.contact .touch form input:focus {
+  border: 2px solid var(--primary_color);
+  background-color: var(--second_background_color);
+  outline: none;
+}
 .contact form label {
   font-size: 0.9rem;
   color: #9f9f9f;

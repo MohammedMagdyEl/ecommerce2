@@ -5,6 +5,7 @@ import address from "../../image/contact/addres.png";
 import phone from "../../image/contact/phone.png";
 import working from "../../image/contact/working.png";
 import Second_Footer from './../second-footer/Second_Footer';
+import { Link } from "react-router";
 function Contact() {
   return (
     <>
@@ -61,9 +62,9 @@ function Contact() {
               <label htmlFor="massage">Massage</label>
               <input type="text" id="massage" />
             </div>
-            <div className="button">
+            <Link className="button">
               <button>Submit</button>
-            </div>
+            </Link>
           </form>
         </div>
       </div>

@@ -51,10 +51,11 @@ function Header() {
               <CiHeart />
             </Link>
           </li>
-          <li>
+          <li className="lignth_cart">
             <Link to="/cart">
               <CiShoppingCart />
             </Link>
+            
           </li>
         </ul>
       </div>

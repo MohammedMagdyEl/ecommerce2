@@ -145,7 +145,7 @@ function Checkout() {
                 >
                   <input
                     type="radio"
-                    id="cash-on-delivery"
+                    id="direct-bank-transfer"
                     name="payment-method"
                     value="cash-on-delivery"
                     checked={selectedMethod === "cash-on-delivery"}
@@ -153,7 +153,7 @@ function Checkout() {
                   />
 
                   <label
-                    htmlFor="cash-on-delivery"
+                    htmlFor="direct-bank-transfer"
                   >
                     Cash On Delivery
                   </label>
