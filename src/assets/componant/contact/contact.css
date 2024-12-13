@@ -1,0 +1,141 @@
+.contact{
+
+}
+.contact .image{
+    width: 100%;
+}
+
+.contact .image img{
+    width: 100%;
+}
+.contact .touch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+   
+}
+
+.contact .touch .lift{
+    padding: 50px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   
+    gap: 30px;
+    
+}
+
+.contact .touch .lift .address{
+    display: flex;
+    gap: 10px;
+}
+
+.contact .touch .lift .address .text{
+    padding: 0 10px;
+}
+
+.contact .touch .lift .address .text h3{
+    font-size: 1.25rem;
+}
+
+.contact .touch .lift .address .text p{
+    font-size: .8rem;
+    text-wrap: wrap;
+    width: 90%;
+    
+}
+
+
+
+.contact .touch form{
+    padding: 50px 0;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.contact .touch form div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact .touch form label,
+.contact .touch form input{
+    width: 80%;
+}
+
+.contact form label{
+    font-size: .9rem;
+    color:#9F9F9F ;
+}
+
+.contact form input{
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #9F9F9F;
+}
+
+
+.contact form .button button{
+    margin-top: 20px;
+    background-color: #fff;
+    color: var(--primary_color);
+    padding: 15px 25px;
+    width: 150px;
+    border: 1px solid var(--primary_color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: 0.7s ease;
+    border-radius: 5px;
+}
+.contact form .button button:hover{
+    color: #fff;
+    background-color: var(--primary_color);
+    box-shadow: 0 0 20px var(--primary_color);
+}
+
+
+  
+ 
+@media(max-width:700px){
+    .contact .touch form label,
+    .contact .touch form input{
+        width: 70%;
+    }
+    
+}
+@media(max-width:600px){
+   
+    .contact .touch{
+        display: flex;
+        flex-direction: column;
+
+
+        
+       
+    }
+    .contact .touch form label,
+    .contact .touch form input{
+        width: 70%;
+    }
+    .contact .touch form{
+       
+        width: 80%;
+        padding: 0;
+
+    }
+    .contact .touch .lift{
+      
+        width: 80%;
+       
+        
+    }
+}

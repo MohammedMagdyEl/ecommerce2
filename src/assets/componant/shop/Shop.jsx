@@ -1,7 +1,7 @@
 import React from 'react'
 import Baner_shop from "./baner_shop/Baner_shop"
 import Shop_products from './shop_products/Shop_products'
-import Second_Footer from './second-footer/Second_Footer'
+import Second_Footer from '../second-footer/Second_Footer'
 
 function Shop() {
   return (
