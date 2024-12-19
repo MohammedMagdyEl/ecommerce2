@@ -16,8 +16,9 @@
 .header .nav ul,
 .header .icons ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 15px;
 }
 .header .nav ul li a,
 .header .icons ul li a {

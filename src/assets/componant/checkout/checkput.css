@@ -135,14 +135,19 @@ padding: 5px;
     background-color: var(--primary_color);
     box-shadow: 0 0 20px var(--primary_color);
   }
+  @media(max-width:800px){
+    .billing_det{
+        padding: 0 20px;
+    }
+    .billing_det .lift,
+    .billing_det .right{
+        width: 100%;
+    }
+  }
 
   @media(max-width:500px){
     .billing_det{
         display: block;
         padding: 0 50px;
-    }
-    .billing_det .lift,
-    .billing_det .right{
-        width: 100%;
     }
   }

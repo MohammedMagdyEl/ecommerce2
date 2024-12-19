@@ -4,7 +4,7 @@ import { ProductsContext } from "../../oue_products/Oue_products";
 import "./shop_products.css";
 import { IoMdShare } from "react-icons/io";
 import { MdOutlineCompareArrows } from "react-icons/md";
-import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa6";
 import { CartContext } from "../../../context/context";
 
 function Shop_products() {
@@ -63,7 +63,8 @@ function Shop_products() {
                   <MdOutlineCompareArrows /> <span>Compare</span>
                 </div>
                 <button className="icon btn_favorite" onClick={() => addToWishlist(product)}>
-                  <CiHeart /> <span>Like</span>
+                  <div className="heart"><FaHeart /></div>
+                   <span>Like</span>
                 </button>
               </div>
             </div>
