@@ -4,11 +4,16 @@ import wishlist_baner from "../../image/Wishlist/1.png"
 import { MdDelete } from "react-icons/md";
 import { CartContext } from "../../context/context";
 import Second_Footer from "../second-footer/Second_Footer";
+import { useDispatch, useSelector } from "react-redux";
+import {removeFromWishlistItems} from "../../redux/action/productAction"
+
 
 function Wishlist() {
-  const { wishlistItems,removeFromWishlist} = useContext(CartContext);
 
+  const dispatch = useDispatch();
+  const wishlistItems = useSelector((state) => state.wishlistItems);
   const calculateSubtotal = (item) => item.price * (item.quantity || 1);
+
   return (
     <div>
       <div className="baner">
@@ -40,7 +45,7 @@ function Wishlist() {
                 <div className="subtotal">
                   Rs. <span>{calculateSubtotal(item).toLocaleString()}</span>
                 </div>
-                <div className="delete" onClick={() => removeFromWishlist(item.id)}>
+                <div className="delete" onClick={() => dispatch(removeFromWishlistItems(item.id))}>
                   <MdDelete size={24} />
                 </div>
               </div>

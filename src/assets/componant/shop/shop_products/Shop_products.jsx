@@ -1,57 +1,76 @@
-
-import React, { useState, useContext } from "react";
-import { ProductsContext } from "../../oue_products/Oue_products";
+import React, { useState, useEffect } from "react";
 import "./shop_products.css";
 import { IoMdShare } from "react-icons/io";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { FaHeart } from "react-icons/fa6";
-import { CartContext } from "../../../context/context";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getProduct,
+  addToCart,
+  addToWishlistItems,
+} from "../../../redux/action/productAction";
+// import { addToCart } from "../../../redux/action/productAction"; // Import addToCart action
 
 function Shop_products() {
-  const { addToCart, addToWishlist } = useContext(CartContext);
-  const { products = [] } = useContext(ProductsContext); // Default to an empty array if undefined
+  const [currentPage, setCurrentPage] = useState(1);
+  const dispatch = useDispatch();
+  const product = useSelector((state) => state.product);
+  const [currentItems, setCurrentItems] = useState([]);
 
-  const itemsPerPage = 24; // Fixed number of items per page
-  const [currentPage, setCurrentPage] = useState(1); // Start on page 1
+  const itemsPerPage = 24;
 
-  // Get items for the current page
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentItems = products.slice(startIndex, startIndex + itemsPerPage);
+  // Update currentItems when products or page changes
+  useEffect(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    setCurrentItems(product.slice(startIndex, startIndex + itemsPerPage));
+  }, [product, currentPage]);
 
-  // Handle page number click
+  // Fetch products on component mount
+  useEffect(() => {
+    dispatch(getProduct());
+  }, [dispatch]);
+
+  const totalPages = Math.ceil(product.length / itemsPerPage);
+
   const handlePageChange = (page) => {
-    setCurrentPage(page); // Set the current page
+    setCurrentPage(page);
   };
-
-  const totalPages = Math.ceil(products.length / itemsPerPage); // Calculate total pages
 
   const handleNext = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1); // Move to the next page
+      setCurrentPage((prevPage) => prevPage + 1);
     }
+  };
+
+  const handleLike = (item) => {
+    // Implement "Like" functionality
+    console.log(`Liked: ${item.name}`);
   };
 
   return (
     <div className="Our-Products">
       <div className="product-list">
-        {currentItems.map((product) => (
-          <div key={product.id} className="product-item ">
-            <img src={product.image} alt={product.name} />
+        {currentItems.map((item) => (
+          <div key={item.id} className="product-item">
+            <img src={item.image} alt={item.name} />
             <div className="details">
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
+              <h2>{item.name}</h2>
+              <p>{item.description}</p>
               <p>
-                Price: Rp {product.price.toLocaleString()}{" "}
-                {product.original_price && (
+                Price: Rp {item.price.toLocaleString()}{" "}
+                {item.original_price && (
                   <span>
-                    <del>Rp {product.original_price.toLocaleString()}</del>
+                    <del>Rp {item.original_price.toLocaleString()}</del>
                   </span>
                 )}
               </p>
             </div>
             <div className="hover-after">
               <div className="button">
-                <button className="add_btn" onClick={() => addToCart(product)}>
+                <button
+                  className="add_btn"
+                  onClick={() => dispatch(addToCart(item))}
+                >
                   Add to Cart
                 </button>
               </div>
@@ -62,9 +81,14 @@ function Shop_products() {
                 <div className="icon">
                   <MdOutlineCompareArrows /> <span>Compare</span>
                 </div>
-                <button className="icon btn_favorite" onClick={() => addToWishlist(product)}>
-                  <div className="heart"><FaHeart /></div>
-                   <span>Like</span>
+                <button
+                  className="icon btn_favorite"
+                  onClick={() => dispatch(addToWishlistItems(item))}
+                >
+                  <div className="heart">
+                    <FaHeart />
+                  </div>
+                  <span>Like</span>
                 </button>
               </div>
             </div>
@@ -72,13 +96,13 @@ function Shop_products() {
         ))}
       </div>
 
-      {/* Pagination with Page Numbers */}
       <div className="pagination">
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}
             onClick={() => handlePageChange(index + 1)}
             className={currentPage === index + 1 ? "active" : ""}
+            aria-label={`Page ${index + 1}`}
           >
             {index + 1}
           </button>
@@ -96,4 +120,3 @@ function Shop_products() {
 }
 
 export default Shop_products;
-

@@ -29,7 +29,7 @@ const ScrollToTop = ({ children }) => {
 
 function App() {
   return (
-    <CartProvider>
+    // <CartProvider>
       <BrowserRouter>
         <ScrollToTop>
           <div className="container">
@@ -46,7 +46,7 @@ function App() {
           </div>
         </ScrollToTop>
       </BrowserRouter>
-    </CartProvider>
+    // </CartProvider>
   );
 }
 

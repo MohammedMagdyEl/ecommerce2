@@ -4,9 +4,16 @@ import { CartContext } from "../../context/context";
 import "./checkput.css";
 import Second_Footer from "./../second-footer/Second_Footer";
 import { Link } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 
 function Checkout() {
-  const { cartItems } = useContext(CartContext);
+  const [selectedMethod, setSelectedMethod] = useState("bank-transfer");
+
+  const handlePaymentChange = (event) => {
+    setSelectedMethod(event.target.value);
+  };
+
+  const cartItems = useSelector((state) => state.cartItems);
 
   const calculateSubtotal = (item) => item.price * (item.quantity || 1);
 
@@ -14,12 +21,6 @@ function Checkout() {
     (acc, item) => acc + calculateSubtotal(item),
     0
   );
-
-  const [selectedMethod, setSelectedMethod] = useState("bank-transfer");
-
-  const handlePaymentChange = (event) => {
-    setSelectedMethod(event.target.value);
-  };
 
   return (
     <>
@@ -92,90 +93,63 @@ function Checkout() {
             </p>
             <h2>Total</h2>
             <h4 className="total">Rs. {total.toLocaleString()}</h4>
-
-           
           </div>
           <div className=" buttom">
-              <hr />
-              <form>
-                <div
-                //   style={{ marginBottom: "20px" }}
-                >
-                  <input
-                    type="radio"
-                    id="bank-transfer"
-                    name="payment-method"
-                    value="bank-transfer"
-                    checked={selectedMethod === "bank-transfer"}
-                    onChange={handlePaymentChange}
-                  />
-                  <label
-                    htmlFor="bank-transfer"
-                  >
-                    Direct Bank Transfer
-                  </label>
-                  <p
-               
-                  >
-                    Make your payment directly into our bank account. Please use
-                    your Order ID as the payment reference. Your order will not
-                    be shipped until the funds have cleared in our account.
-                  </p>
-                </div>
-
-                <div
-               
-                >
-                  <input
-                    type="radio"
-                    id="cash-on-delivery"
-                    name="payment-method"
-                    value="cash-on-delivery"
-                    checked={selectedMethod === "cash-on-delivery"}
-                    onChange={handlePaymentChange}
-                  />
-
-                  <label
-                    htmlFor="cash-on-delivery"
-                  >
-                    Direct Bank Transfer
-                  </label>
-                </div>
-                <div
-                >
-                  <input
-                    type="radio"
-                    id="direct-bank-transfer"
-                    name="payment-method"
-                    value="cash-on-delivery"
-                    checked={selectedMethod === "cash-on-delivery"}
-                    onChange={handlePaymentChange}
-                  />
-
-                  <label
-                    htmlFor="direct-bank-transfer"
-                  >
-                    Cash On Delivery
-                  </label>
-                </div>
-                <p
-                >
-                  Your personal data will be used to support your experience
-                  throughout this website, to manage access to your account, and
-                  for other purposes described in our{" "}
-                  <Link
-                    to="#" >
-                    privacy policy
-                  </Link>
-                  .
+            <hr />
+            <form>
+              <div
+              //   style={{ marginBottom: "20px" }}
+              >
+                <input
+                  type="radio"
+                  id="bank-transfer"
+                  name="payment-method"
+                  value="bank-transfer"
+                  checked={selectedMethod === "bank-transfer"}
+                  onChange={handlePaymentChange}
+                />
+                <label htmlFor="bank-transfer">Direct Bank Transfer</label>
+                <p>
+                  Make your payment directly into our bank account. Please use
+                  your Order ID as the payment reference. Your order will not be
+                  shipped until the funds have cleared in our account.
                 </p>
+              </div>
 
-                <button
-                >
-                  Place order
-                </button>
-              </form>
-            </div>
+              <div>
+                <input
+                  type="radio"
+                  id="cash-on-delivery"
+                  name="payment-method"
+                  value="cash-on-delivery"
+                  checked={selectedMethod === "cash-on-delivery"}
+                  onChange={handlePaymentChange}
+                />
+
+                <label htmlFor="cash-on-delivery">Direct Bank Transfer</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="direct-bank-transfer"
+                  name="payment-method"
+                  value="cash-on-delivery"
+                  checked={selectedMethod === "cash-on-delivery"}
+                  onChange={handlePaymentChange}
+                />
+
+                <label htmlFor="direct-bank-transfer">Cash On Delivery</label>
+              </div>
+              <p>
+                Your personal data will be used to support your experience
+                throughout this website, to manage access to your account, and
+                for other purposes described in our{" "}
+                <Link to="#">privacy policy</Link>.
+              </p>
+
+              <button>Place order</button>
+            </form>
+          </div>
         </div>
       </div>
       <Second_Footer />

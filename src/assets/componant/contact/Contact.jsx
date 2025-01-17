@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./contact.css";
 import baner from "../../image/contact/1.png";
 import address from "../../image/contact/addres.png";
 import phone from "../../image/contact/phone.png";
 import working from "../../image/contact/working.png";
-import Second_Footer from './../second-footer/Second_Footer';
-import { Link } from "react-router";
+import Second_Footer from "./../second-footer/Second_Footer";
+
 function Contact() {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_wi7gbf8",
+      "template_c4cb70o",
+      form.current,
+      "Tt8gPKCCSOAZ1ll3x"
+    );
+    e.target.reser();
+  };
   return (
     <>
       <div className="contact">
@@ -45,30 +58,26 @@ function Contact() {
               </div>
             </div>
           </div>
-          <form action="" className="">
+
+          <form ref={form} onSubmit={sendEmail} className="">
             <div>
               <label htmlFor="username">Your Name</label>
-              <input type="text" id="username" />
+              <input type="text" id="username" name="name" />
             </div>
             <div>
               <label htmlFor="email">Email addrss</label>
-              <input type="text" id="email" />
-            </div>
-            <div>
-              <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" />
+              <input type="text" id="email" name="email" />
             </div>
             <div>
               <label htmlFor="massage">Massage</label>
-              <input type="text" id="massage" />
+              <textarea name="massage" rows={10} type="text" id="massage" />
             </div>
-            <Link className="button">
-              <button>Submit</button>
-            </Link>
+
+            <button className="button">Submit</button>
           </form>
         </div>
       </div>
-      <Second_Footer/>
+      <Second_Footer />
     </>
   );
 }

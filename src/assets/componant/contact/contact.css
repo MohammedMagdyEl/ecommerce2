@@ -62,14 +62,17 @@
 }
 
 .contact .touch form label,
-.contact .touch form input {
+.contact .touch form input,
+.contact .touch form textarea {
   width: 80%;
 }
-.contact .touch form input{
-  padding:0 10px;
+.contact .touch form input,
+.contact .touch form textarea {
+  padding: 5px 10px;
 }
 
-.contact .touch form input:focus {
+.contact .touch form input:focus,
+.contact .touch form textarea:focus {
   border: 2px solid var(--primary_color);
   background-color: var(--second_background_color);
   outline: none;
@@ -84,8 +87,12 @@
   border-radius: 5px;
   border: 1px solid #9f9f9f;
 }
+.contact .touch form textarea {
+  border: 1px solid #9f9f9f;
+  border-radius: 5px;
+}
 
-.contact form .button button {
+.contact form .button  {
   margin-top: 20px;
   background-color: #fff;
   color: var(--primary_color);
@@ -97,7 +104,7 @@
   transition: 0.7s ease;
   border-radius: 5px;
 }
-.contact form .button button:hover {
+.contact form .button:hover {
   color: #fff;
   background-color: var(--primary_color);
   box-shadow: 0 0 20px var(--primary_color);
@@ -123,6 +130,5 @@
     flex-direction: column;
     align-items: center;
     padding: 0px 20px;
-
   }
 }

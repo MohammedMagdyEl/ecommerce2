@@ -1,13 +1,18 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import "./cart.css";
-import cart_baner from "../../image/cart/1.png";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  updateCartQuantity,
+  removeFromCart,
+} from "../../redux/action/productAction"; // Correct the import
 import { MdDelete } from "react-icons/md";
-import { CartContext } from "../../context/context";
-import Second_Footer from "../second-footer/Second_Footer";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
+import cartBanner from "../../image/cart/1.png";
+import SecondFooter from "../second-footer/Second_Footer";
 
 function Cart() {
-  const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cartItems);
 
   const calculateSubtotal = (item) => item.price * (item.quantity || 1);
 
@@ -18,23 +23,29 @@ function Cart() {
 
   const handleQuantityChange = (e, item) => {
     const updatedQuantity = parseInt(e.target.value) || 1;
-    updateQuantity(item.id, updatedQuantity);
+    dispatch(updateCartQuantity(item.id, updatedQuantity)); // Dispatch the action
+  };
+
+  const handleRemoveItem = (id) => {
+    dispatch(removeFromCart(id));
   };
 
   return (
     <div>
-      <div className="baner">
-        <img src={cart_baner} alt="Cart Banner" />
+      {/* Cart Banner */}
+      <div className="banner">
+        <img src={cartBanner} alt="CartBanner" />
       </div>
 
-      <div className="cart_detels ">
+      {/* Cart Details */}
+      <div className="cart_detels">
         <div className="lift">
           <div className="header_cart">
             <h4 className="header_Product">Product</h4>
             <h4 className="header-Price">Price</h4>
             <h4 className="header-Quantity">Quantity</h4>
             <h4 className="header-subtotal">Subtotal</h4>
-            <h4 className="header-delete borde">Action</h4>
+            <h4 className="header-delete">Action</h4>
           </div>
 
           {cartItems.length > 0 ? (
@@ -54,13 +65,16 @@ function Cart() {
                     type="number"
                     value={item.quantity || 1}
                     min="1"
-                    onChange={(e) => handleQuantityChange(e, item)}
+                    onChange={(e) => handleQuantityChange(e, item)} // Handle quantity change
                   />
                 </div>
                 <div className="subtotal">
                   Rs. <span>{calculateSubtotal(item).toLocaleString()}</span>
                 </div>
-                <div className="delete" onClick={() => removeFromCart(item.id)}>
+                <div
+                  className="delete"
+                  onClick={() => handleRemoveItem(item.id)}
+                >
                   <MdDelete size={24} />
                 </div>
               </div>
@@ -70,6 +84,7 @@ function Cart() {
           )}
         </div>
 
+        {/* Cart Totals */}
         <div className="right">
           <div className="title">
             <h3>Cart Totals</h3>
@@ -87,7 +102,9 @@ function Cart() {
           </Link>
         </div>
       </div>
-      <Second_Footer />
+
+      {/* Footer */}
+      <SecondFooter />
     </div>
   );
 }
