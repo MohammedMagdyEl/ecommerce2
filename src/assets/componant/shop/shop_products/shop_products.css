@@ -1,4 +1,38 @@
+.filter {
+  height: 100px;
+  width: 100%;
+  background: var(--second_background_color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+
+}
+.filter h5{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.filter ul {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.filter ul li {
+ 
+}
+.filter ul li button {
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: none;
+}
+
 .product-list .product-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .product-list .hover-after {
@@ -18,35 +52,40 @@
 .product-list .product-item img {
   width: 100%;
   border-radius: 5px 5px 0 0;
-
+  position: relative;
 }
 
 .product-list .hover-after .button {
   width: 100%;
 }
-.product-list .hover-after .button .add_btn {
-  margin-top: 20px;
+.product-list .product-item .button .add_btn {
   background-color: #fff;
   color: var(--primary_color);
-  padding: 10px;
+  padding: 5px;
   width: 75%;
   border: 1px solid var(--primary_color);
   font-size: 1.25rem;
   font-weight: 600;
   transition: 0.7s ease;
   border-radius: 5px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.product-list .hover-after .button .add_btn:hover {
+.product-list .product-item .button .add_btn:hover {
   color: #fff;
   background-color: var(--primary_color);
   box-shadow: 0 0 20px var(--primary_color);
 }
 
 .product-list .hover-after .icons {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   justify-content: space-around;
-  width: 100%;
 }
 
 .product-list .hover-after .icons .icon {
@@ -60,14 +99,19 @@
   border: none;
   background-color: transparent;
 }
-.product-list .hover-after .icons .btn_favorite .heart{
+.product-list .hover-after .icons .btn_favorite .heart svg {
+  color: #fff;
+  background-color: var(--primary_color);
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
 
-  color: red;
-}
-.product-list .hover-after .icons .icon span {
-  font-size: 0.8rem;
+  transition: all 0.3s ease-in-out;
 }
 
+.product-list .hover-after .icons .btn_favorite .heart svg:hover {
+  color: var(--primary_color);
+  background-color: transparent;
+}
 .product-list .product-item:hover .hover-after {
   opacity: 1;
   background-color: hsla(0, 0%, 23%, 0.375);
@@ -104,15 +148,10 @@
 
 @media (max-width: 900px) {
   .product-list .hover-after {
-
- 
-
     gap: 20px;
   }
   .product-list .hover-after .button .add_btn {
-
     padding: 3px;
- 
   }
   .product-list .hover-after .icons .icon {
     font-size: 1.5rem;
@@ -125,16 +164,12 @@
 
 @media (max-width: 600px) {
   .product-list .hover-after {
-
- 
-
     gap: 20px;
   }
   .product-list .hover-after .button .add_btn {
     margin-top: 50px;
 
     padding: 10px;
- 
   }
   .product-list .hover-after .icons .icon {
     font-size: 2rem;
@@ -144,4 +179,3 @@
     display: block;
   }
 }
-

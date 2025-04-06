@@ -6,6 +6,8 @@ import { CartContext } from "../../context/context";
 import Second_Footer from "../second-footer/Second_Footer";
 import { useDispatch, useSelector } from "react-redux";
 import {removeFromWishlistItems} from "../../redux/action/productAction"
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 function Wishlist() {
@@ -16,6 +18,7 @@ function Wishlist() {
 
   return (
     <div>
+       <ToastContainer/>
       <div className="baner">
         <img src={wishlist_baner} alt="Cart Banner" />
       </div>
@@ -45,7 +48,20 @@ function Wishlist() {
                 <div className="subtotal">
                   Rs. <span>{calculateSubtotal(item).toLocaleString()}</span>
                 </div>
-                <div className="delete" onClick={() => dispatch(removeFromWishlistItems(item.id))}>
+                <div className="delete" onClick={() => {dispatch(removeFromWishlistItems(item.id))
+                    toast.error('Item removed from Favorite!', {
+                      position: "bottom-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        transition: "bounce",
+                      });
+                }
+              }>
                   <MdDelete size={24} />
                 </div>
               </div>

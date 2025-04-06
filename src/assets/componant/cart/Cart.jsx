@@ -9,6 +9,8 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import cartBanner from "../../image/cart/1.png";
 import SecondFooter from "../second-footer/Second_Footer";
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -28,10 +30,22 @@ function Cart() {
 
   const handleRemoveItem = (id) => {
     dispatch(removeFromCart(id));
+    toast.error('Item removed from cart!', {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: "bounce",
+    });
   };
 
   return (
     <div>
+      <ToastContainer/>
       {/* Cart Banner */}
       <div className="banner">
         <img src={cartBanner} alt="CartBanner" />
@@ -73,7 +87,7 @@ function Cart() {
                 </div>
                 <div
                   className="delete"
-                  onClick={() => handleRemoveItem(item.id)}
+                  onClick={() => handleRemoveItem(item.id)} // Trigger toast after removing item
                 >
                   <MdDelete size={24} />
                 </div>
